@@ -1,0 +1,52 @@
+<!-- lab8/app/templates/pdf_template.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frameworks and Languages Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Frameworks and Languages Report</h1>
+    <h2>Languages</h2>
+    <ul>
+        {% for language in languages %}
+            <li>{{ language.name }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Frameworks</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Language</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for framework in frameworks %}
+                <tr>
+                    <td>{{ framework.name }}</td>
+                    <td>{{ framework.language.name }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
